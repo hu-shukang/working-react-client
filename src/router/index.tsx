@@ -1,6 +1,7 @@
 import Page1 from '@/pages/page1';
 import Page2 from '@/pages/page2';
 import { RouteObject, useRoutes } from 'react-router';
+import ProtectedRoute from './ProtectedRoute';
 
 const routes: RouteObject[] = [
   {
@@ -9,7 +10,7 @@ const routes: RouteObject[] = [
   },
   {
     path: '2',
-    element: <Page2 />
+    element: <ProtectedRoute element={<Page2 />} />
   }
 ];
 
