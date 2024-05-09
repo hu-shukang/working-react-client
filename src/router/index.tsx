@@ -1,12 +1,12 @@
-import Page1 from '@/pages/page1';
+import Dashboard from '@/pages/dashboard';
 import Page2 from '@/pages/page2';
 import { RouteObject, useRoutes } from 'react-router';
-import ProtectedRoute from './ProtectedRoute';
+import ProtectedRoute from './protected-route';
 
 const routes: RouteObject[] = [
   {
     path: '',
-    element: <Page1 />
+    element: <Dashboard />
   },
   {
     path: '2',
