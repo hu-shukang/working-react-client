@@ -1,6 +1,8 @@
 import Dashboard from '@/pages/dashboard';
 import { Navigate, RouteObject, useRoutes } from 'react-router';
 import HomePage from '@/pages/dashboard/home';
+import OrdersPage from '@/pages/dashboard/orders';
+import NotFound from '@/pages/not-found';
 
 const routes: RouteObject[] = [
   {
@@ -14,13 +16,17 @@ const routes: RouteObject[] = [
       {
         path: 'home',
         element: <HomePage />
+      },
+      {
+        path: 'orders',
+        element: <OrdersPage />
       }
     ]
+  },
+  {
+    path: '*',
+    element: <NotFound />
   }
-  // {
-  //   path: '2',
-  //   element: <ProtectedRoute element={<Page2 />} />
-  // }
 ];
 
 const Router = () => {
