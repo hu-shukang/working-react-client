@@ -1,17 +1,26 @@
 import Dashboard from '@/pages/dashboard';
-import Page2 from '@/pages/page2';
-import { RouteObject, useRoutes } from 'react-router';
-import ProtectedRoute from './protected-route';
+import { Navigate, RouteObject, useRoutes } from 'react-router';
+import HomePage from '@/pages/dashboard/home';
 
 const routes: RouteObject[] = [
   {
     path: '',
-    element: <Dashboard />
-  },
-  {
-    path: '2',
-    element: <ProtectedRoute element={<Page2 />} />
+    element: <Dashboard />,
+    children: [
+      {
+        path: '',
+        element: <Navigate to="/home" replace={true} />
+      },
+      {
+        path: 'home',
+        element: <HomePage />
+      }
+    ]
   }
+  // {
+  //   path: '2',
+  //   element: <ProtectedRoute element={<Page2 />} />
+  // }
 ];
 
 const Router = () => {
